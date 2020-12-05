@@ -1,0 +1,156 @@
+I"y<p>전환부터 리타게팅까지. 페이스북 광고를 제대로 집행하기 위해서는 반드시 웹사이트에 설치해야하는 ‘페이스북 픽셀(Facebook Pixel)’. 웹사이트에 직접 코드를 넣어주는 방법으로 설치할 수 도 있지만 앞서 소개한 GA와 마찬가지로 GTM을 이용하면 보다 간편하게 설치할 수 있다.</p>
+
+<blockquote>
+  <p>►참고글 1 : <a href="https://nohze.com/mkt/gtm03_GAInstall/">구글 태그매니저로 GA 설치하기</a></p>
+
+  <p>►참고글 2 : <a href="https://developers.facebook.com/docs/facebook-pixel/implementation">Facebook Developers Guide</a></p>
+</blockquote>
+
+<p>특히 GTM 설치가 이미 완료된 경우라면 더욱 간단하다. (참고글 : <a href="https://nohze.com/mkt/gtm02_GTMInstall/">웹사이트에 GTM 설치하기</a>) 또한, 추후 수정사항이 생겼을때에도 픽셀 사용자(ex.마케터)가 자유롭게 수정할 수 있다. 그래서 이 글에서는 편의성이 높은 방법인 GTM을 이용해 페이스북 픽셀을 설치하는 방법을 소개한다.</p>
+
+<p>먼저 페이스북 비즈니스에 들어가서 나의 기본 픽셀코드를 확인한다.</p>
+
+<hr />
+
+<h3 id="페이스북-기본-픽셀-코드-확인하기">페이스북 기본 픽셀 코드 확인하기</h3>
+
+<ol>
+  <li>
+    <p><a href="https://business.facebook.com/">페이스북 비즈니스</a> &gt; 이벤트 관리자 탭에 접속한다.
+<img src="/img/posts/012/01.jpg" alt="페이스북 비즈니스 이벤트관리자" />
+<br /></p>
+  </li>
+  <li>
+    <p>기존에 생성해두었던 픽셀이 있는 경우에는, 적합한 픽셀을 선택한 후 [Add Events] 드롭다운 메뉴를 누르고 &gt; [From a New Website] 를 선택한다.</p>
+
+    <p><img src="/img/posts/012/02.jpg" alt="페이스북 이벤트 관리자 픽셀코드 확인" /></p>
+
+    <p><br /></p>
+
+    <p>새로 픽셀을 만들어야 하는 경우에는, 데이터 소스 연결 또는 비즈니스 설정에서 픽셀 추가 버튼을 눌러 신규 픽셀을 생성한다.</p>
+
+    <p><img src="/img/posts/012/03.jpg" alt="페이스북 신규 픽셀 설치하기" />
+<br /></p>
+  </li>
+  <li>
+    <p>다음으로 팝업 모달의 메뉴에서 코드 직접 설치 단추를 누르고, 왼쪽 위에 보이는 Copy base code 하단에 있는 ‘코드 복사’ 버튼을 누른다. <br />
+<em>1) 코드 직접설치 선택</em></p>
+
+    <p><img src="/img/posts/012/04.jpg" alt="페이스북 신규 픽셀 설치하기" /></p>
+
+    <p><em>2) 기본 코드 복사</em></p>
+
+    <p><img src="/img/posts/012/05.jpg" alt="페이스북 신규 픽셀 설치하기" /></p>
+
+    <p><br /></p>
+  </li>
+</ol>
+
+<hr />
+
+<p>여기까지 준비가 됐다면,  구글 태그 매니저에 접속해 태그를 만들면 된다.</p>
+
+<p>아쉽게도  페이스북 픽셀은 구글 애널리틱스와 달리 태그유형과 변수가 기본으로 제공되지 않기 때문에 맞춤 설정에 있는 <strong>맞춤 HTML 태그</strong>를 이용해 변수를 만들어야 한다.</p>
+
+<p><br /></p>
+
+<hr />
+
+<h3 id="gtm을-이용해-페이스북-픽셀-설치하기">GTM을 이용해 페이스북 픽셀 설치하기</h3>
+
+<ol>
+  <li>
+    <p><strong>GTM 태그만들기</strong>
+<img src="/img/posts/012/06.jpg" alt="GTM에서 GA기본태그 만들기" /></p>
+
+    <p>GTM에 접속해 작업화면에서 [태그] 탭을 누른 후 [새로 만들기] 버튼을 누른다.<br /></p>
+
+    <p><img src="/img/posts/012/07.jpg" alt="GTM에서 GA기본태그 만들기" /></p>
+
+    <p>태그 이름은 ‘페이스북 픽셀’등 관리자가 식별하기 편한 이름으로 적어주고, 태그 유형은 [맞춤 HTML] 로 선택한다. <br /></p>
+
+    <p><img src="/img/posts/012/08.jpg" alt="GTM에서 GA기본태그 만들기" />
+HTML 입력창에는 페이스북에서 복사한 기본코드를 붙여넣어 준다.</p>
+  </li>
+  <li>
+    <p><strong>트리거 설정 후 저장하기</strong></p>
+
+    <p><img src="/img/posts/012/09.jpg" alt="GTM 트리거 만들기" /></p>
+
+    <p>트리거는 구글 태그매니저 기본태그와 마찬가지로 어떤 페이지로 들어오던 유입되는 시점에 태그가 실행되어야 하므로, 기본 트리거 중 [All Pages]를 선택한다. <br /></p>
+
+    <p><img src="/img/posts/012/10.jpg" alt="GTM 트리거 만들기" /></p>
+
+    <p>선택 후 다시 태그화면으로 돌아오면 [저장] 해주면 연결이 끝난다.<br /><br /></p>
+  </li>
+</ol>
+
+<hr />
+
+<p>연결 후에는 문제 없이 실행되고 있는지 3가지 방법으로 확인할 수 있다.</p>
+
+<ol>
+  <li>
+    <p><strong>GTM - 미리보기</strong><br />
+먼저 GA와 마찬가지로 구글 태그매니저의 [미리보기] 기능을 활용해 확인할 수 있다. 미리보기 버튼을 누른 후 태그를 설치한 우리 웹사이트에 들어가보자.<br /></p>
+
+    <p><em>1) 미리보기 버튼</em>
+<img src="/img/posts/012/11.jpg" alt="GTM 미리보기" /><br /></p>
+
+    <p><em>2) 웹사이트에서 확인하기</em></p>
+
+    <p><img src="/img/posts/012/12.jpg" alt="GTM 미리보기" /><br /></p>
+
+    <p>웹사이트 내에 Tags Fireed 부분에 우리가 설치한 ‘페이스북 픽셀’태그가 보인다면, 잘 작동되고 있는 것이다.</p>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p><strong>페이스북 - 이벤트 테스트</strong><br />
+페이스북 비즈니스 계정에서도 별도로 디버거를 제공하고 있어서 페이스북에서도 확인할 수 있다. <br /><img src="/img/posts/012/13.jpg" alt="GTM 미리보기" /><br /></p>
+
+    <p>픽셀 코드를 확인한 화면을 닫아주고, 같은 화면에 있는 2번째 탭 [이벤트 테스트] 탭에서 브라우저 이벤트 테스트 밑에 URL을 넣고 [웹사이트 연결] 버튼을 눌러준다. <br /></p>
+
+    <p><img src="/img/posts/012/14.jpg" alt="GTM 미리보기" /><br /></p>
+
+    <p>문제 없이 설치된 경우 위 화면과 같이 PageView 이벤트가 수신된다.
+<br /></p>
+  </li>
+  <li>
+    <p><strong>페이스북 - Facebook Pixel Helper</strong><br />
+마지막으로 크롬 확장 프로그램인 페이스북 픽셀 헬퍼를 통해서도 확인할 수 있다.
+► 설치 바로가기 : <a href="https://chrome.google.com/webstore/detail/facebook-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc">Facebook Pixel Helper</a></p>
+
+    <p><img src="/img/posts/012/15.jpg" alt="GTM 미리보기" /><br /></p>
+
+    <p>설치 후 픽셀을 설치한 웹사이트에 접속하면 컬러가 활성화되며, 누르면 PageView 이벤트가 활성화 되었음을 확인할 수 있다.</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<hr />
+
+<h3 id="제출-및-게시하기">제출 및 게시하기</h3>
+
+<p>모두 확인했다면, 구글 태그 매니저에 돌아와 태그를 [ 제출 ] 한다.</p>
+
+<p>앞선 글에서도 강조했지만, 구글 태그매니저는 작업 후 반드시 [ 제출 ] 버튼을 누른 후 버전 정보를 입력해 [ 게시 ] 해야 한다. 게시가 완료되어야 웹사이트에 작업내역이 반영된다. <br /></p>
+
+<p><br /></p>
+
+<hr />
+
+<h5 id="-참고문서">📚 참고문서</h5>
+
+<ul>
+  <li><a href="https://support.google.com/tagmanager/answer/9334084">구글 태그매니저 도움말 - 맞춤 HTML</a></li>
+  <li><a href="https://support.google.com/tagmanager/answer/6107167">구글 태그매니저 도움말 - 맞춤 태그 만들기</a></li>
+  <li><a href="https://developers.facebook.com/docs/facebook-pixel/implementation">페이스북 픽셀 developer guide</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/facebook-pixel-helper/fdgfkebogiimcoedlicjlajpkdmockpc">Facebook Pixel Helper</a></li>
+</ul>
+
+<hr />
+
+<p>실무에서 GTM을 다루며, 개인적으로 학습한 내용을 정리한 글입니다. 사실과 다른 내용이나, 문의사항이 있으시다면 댓글 또는 홈페이지 우측하단의 메신저를 보내주세요! <a href="https://nohze.com/contact">CONTACT</a> 페이지를 통해 메일을 보내실 수도 있습니다. 감사합니다.<br /><br /></p>
+:ET

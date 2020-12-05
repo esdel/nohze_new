@@ -1,0 +1,28 @@
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script>
+  Kakao.init('0d33b5653ddd5b637cf47d3e54d7bfaf');
+
+  function kakaoShare(){
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '{{page.title}}',
+        description: '{{page.description}}',
+        imageUrl:
+          '{{site.url}}{{page.permalink}}',
+        link: {
+          mobileWebUrl: '{{ site.url }}{{ page.permalink }}?utm_source=kakaotalk&utm_medium=social&utm_campaign=blogShare',
+        },
+      },
+      buttons: [
+        {
+          title: '자세히보기',
+          link: {
+            mobileWebUrl: '{{ site.url }}{{ page.permalink }}?utm_source=kakaotalk&utm_medium=social&utm_campaign=blogShare',
+          },
+        },
+      ]
+    });
+      }
+</script>
