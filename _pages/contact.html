@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
-image: '/images/80.jpg'
+image: '/images/bg-index.jpg'
 ---
 <div class="form-container">
   {% if site.contact.description %}
@@ -16,14 +16,14 @@ image: '/images/80.jpg'
     </div>
     <div class="form__group">
       <label class="form__label screen-reader-text" for="form-email">Your Email</label>
-      <input class="form__input" id="form-email" type="email" name="_replyto" placeholder="Email" required>
+      <input class="form__input" id="form-email" type="email" name="_replyto" placeholder="이메일 (ex.abc@naver.com)" required>
     </div>
     <div class="form__group">
       <label class="form__label screen-reader-text" for="form-text">Your Message</label>
-      <textarea class="form__input" id="form-text" name="문의내용" rows="7" placeholder="문의 내용" required></textarea>
+      <textarea class="form__input" id="form-text" name="문의내용" rows="7" placeholder="문의 내용을 적어주세요." required></textarea>
     </div>
     <div class="form__group">
-      <button class="button button--primary" type="submit">전송하기</button>
+      <button class="button button--primary" type="submit">이메일 전송하기</button>
     </div>
     <input type="hidden" name="_subject" value="[nohze.com]블로그에서 문의가 도착했습니다." />
     <input type="hidden" name="_next" value="{{ site.baseurl }}/contact/thanks/" />

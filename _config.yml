@@ -13,9 +13,9 @@ thumbnail: "/img/thumbnail.jpg"
 #-------------------------------
 # Author Settings
 author:
-  avatar: '/images/nohze.png'
-  name: "Nohze"
-  job: "퇴근시간 당겨주는 디지털 마케팅"
+  avatar: '/img/nohze.jpg'
+  name: "nohze"
+  job: "Digital Marketing Blog"
 
 social:
 - {icon: "ion-logo-facebook", link: "https://www.facebook.com/nohze.code"}
