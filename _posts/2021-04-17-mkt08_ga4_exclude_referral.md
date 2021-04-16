@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /mkt/ga-exclude-referral/
+permalink: /mkt/ga4-exclude-referral/
 title: 'GA4 추천 제외 설정 - 소셜로그인, PG'
 date: 2021-04-16 11:30:00 +09:00
 image: '/img/posts/016/mkt_ga01_thumbnail.jpg'
