@@ -9,7 +9,7 @@ categories:
 tags: [페이스북, 카탈로그, utm]
 description: 카탈로그 링크를 수정하지 않고, 광고에만 UTM을 설정하는 방법
 content_id: 'CM00006'
-featured: true
+featured: false
 ---
 
 광고 성과를 구분하기 위해 디지털 마케터들이 광고 URL에 필수적으로 붙이는 UTM.
