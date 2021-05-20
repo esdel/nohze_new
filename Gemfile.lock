@@ -45,7 +45,6 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    nuggets (1.6.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -71,4 +70,4 @@ DEPENDENCIES
   jekyll-sitemap
 
 BUNDLED WITH
-   2.1.4
+   2.2.17
