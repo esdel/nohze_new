@@ -76,12 +76,12 @@ layout: default
 <!-- viewcontent event -->
 <script type="text/javascript">
   dataLayer.push({
+  'event':'ViewContent',
   'CID': "{{page.content_id}}",
   'ContentTitle': "{{page.title}}",
   'description':'{{page.description}}',
   'image': '{{ site.github.url }}{{ page.feature }}',
-  'content_url': '{{ site.url }}{{ page.url }}',
-  'event':'ViewContent'
+  'content_url': '{{ site.url }}{{ page.url }}'
   });
 </script>
 
