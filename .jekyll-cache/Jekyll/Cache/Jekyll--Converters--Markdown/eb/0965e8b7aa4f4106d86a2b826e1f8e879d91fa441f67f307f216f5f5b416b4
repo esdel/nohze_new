@@ -1,0 +1,143 @@
+I"<p>페이스북, 인스타그램 광고를 하고 있다면 한번쯤은 아래와 같은 이상한 상황을 겪게 됩니다.</p>
+
+<ol>
+  <li>
+    <p>분명히 아직 ‘검토중’인 상태인데, GA에 페이스북/인스타그램을 통한 세션이 잡혔다.<br /></p>
+  </li>
+  <li>
+    <p>동적 매개변수 (dynamic URL Parameter)를 사용했는데, GA 소스/매체에 변수가 fb / display 나 ig / display 로 잡히지 않고, {{site_source_name}}로 과도하게 잡힌다.<br /></p>
+
+    <p><img src="/img/posts/017/GA-페북필터01.png" alt="GA에서 페이스북,인스타그램 봇을 제외하는 방법1" /></p>
+  </li>
+</ol>
+
+<p>[참고글] <a href="https://nohze.com/mkt/fb01_FacebookUTM/">페이스북 동적 매개변수 설정 방법</a></p>
+
+<p>정상적인 광고 유입으로 보기 어려운 수상한 유입! 실제로 이를 유입된 국가 기준으로 살펴보면  분명히 우리는 ‘대한민국’을 타겟팅 했음에도 해외에서 유입(대부분 United States(미국)) 되었음을 발견할 수 있는데요,</p>
+
+<p><img src="/img/posts/017/GA-페북필터02.png" alt="GA에서 페이스북,인스타그램 봇을 제외하는 방법1" /></p>
+
+<blockquote>
+  <p>이 유입의 정체는 바로 검수를 위한 [검수봇] 인데,</p>
+</blockquote>
+
+<p>이를 그대로 광고의 성과로 해석한다면 오차가 발생할 수 밖에 없습니다. 따라서, 우리는 정확도 높은 광고 성과 분석을 위해 <strong><u>검수 봇을 제외</u></strong>해주는 것이 좋습니다. 제외는 GA에 필터 기능을 사용하면 간단하게 가능합니다.</p>
+
+<h3 id="-ga-필터로-페이스북-인스타그램-광고-검수봇을-제외하는-방법">📌 GA 필터로 페이스북, 인스타그램 광고 검수봇을 제외하는 방법</h3>
+
+<ol>
+  <li>
+    <p><strong>[관리] - [보기] - [필터] - [+필터추가] 버튼을 누르세요.</strong><br /></p>
+
+    <p><img src="/img/posts/017/GA-페북필터03.png" alt="GA에서 페이스북,인스타그램 봇을 제외하는 방법1" />
+<img src="/img/posts/017/GA-페북필터04.png" alt="GA에서 페이스북,인스타그램 봇을 제외하는 방법1" /><br /><br /></p>
+  </li>
+  <li>
+    <p><strong>필터 이름 입력 후 유형은 [맞춤]으로 선택하고, 필터 입력란을 [IP 주소]로 선택합니다.</strong><br /></p>
+
+    <p><img src="/img/posts/017/GA-페북필터05.png" alt="GA에서 페이스북,인스타그램 봇을 제외하는 방법1" /><br /><br /></p>
+  </li>
+  <li>
+    <p><strong>필터 패턴에 정규표현식을 이용해 봇 IP 목록을 입력 후 [저장] 합니다.</strong><br /></p>
+
+    <p><img src="/img/posts/017/GA-페북필터06.png" alt="GA에서 페이스북,인스타그램 봇을 제외하는 방법1" /></p>
+
+    <p>아래 정규식이 포함된 IP를 드래그한 후 복사해 그대로 필터 패턴에 입력해주세요.</p>
+
+    <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">^</span><span class="mf">173.252</span><span class="p">.</span><span class="mi">87</span><span class="p">.</span><span class="o">*</span><span class="nx">$</span><span class="o">|^</span><span class="mf">173.252</span><span class="p">.</span><span class="mi">95</span><span class="p">.</span><span class="o">*</span><span class="nx">$</span><span class="o">|^</span><span class="mf">173.252</span><span class="p">.</span><span class="mi">127</span><span class="p">.</span><span class="o">*</span><span class="nx">$</span><span class="o">|^</span><span class="mf">31.13</span><span class="p">.</span><span class="mi">115</span><span class="p">.</span><span class="o">*</span><span class="nx">$</span><span class="o">|^</span><span class="mf">31.13</span><span class="p">.</span><span class="mi">127</span><span class="p">.</span><span class="o">*</span><span class="nx">$</span><span class="o">|^</span><span class="mf">66.220</span><span class="p">.</span><span class="mi">149</span><span class="p">.</span><span class="o">*</span><span class="nx">$</span><span class="o">|^</span><span class="mf">67.171</span><span class="p">.</span><span class="mi">251</span><span class="p">.</span><span class="o">*</span><span class="nx">$</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<h3 id="-참고사항">✅ 참고사항</h3>
+
+<h5 id="-국가별-봇-ip-목록">📍 국가별 봇 IP 목록</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>봇 IP</th>
+      <th>국가 정보</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>173.252.87.XXX</td>
+      <td>미국</td>
+    </tr>
+    <tr>
+      <td>173.252.95.XXX</td>
+      <td>미국</td>
+    </tr>
+    <tr>
+      <td>173.252.127.XXX</td>
+      <td>미국</td>
+    </tr>
+    <tr>
+      <td>67.171.251.XXX</td>
+      <td>아일랜드</td>
+    </tr>
+    <tr>
+      <td>66.220.149.XXX</td>
+      <td>아일랜드</td>
+    </tr>
+    <tr>
+      <td>31.13.127.XXX</td>
+      <td>미국</td>
+    </tr>
+    <tr>
+      <td>31.13.115.XXX</td>
+      <td>미국</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="-정규표현식">📍 정규표현식</h5>
+
+<p>필터 패턴에 표현된 정규표현식은 아래와 같은 의미입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>표현식</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>^문자열</td>
+      <td>[문자열]로 시작되는 경우</td>
+    </tr>
+    <tr>
+      <td>문자열*</td>
+      <td>이전 0개의 항목과 일치 <br />(=뒤에 어떤 문자열이 붙어도 포함)</td>
+    </tr>
+    <tr>
+      <td>$</td>
+      <td>입력 패턴 종료(정규식 종료)</td>
+    </tr>
+    <tr>
+      <td>|</td>
+      <td>여러개의 정규식을 붙여주는 구문<br /> [or 연산자=또는]와 동일합니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="-주의사항">🚨 주의사항</h3>
+
+<p>GA에 필터기능은 데이터 적재 자체에 영향을 미칩니다. 따라서, raw data 보고서에 필터 적용은 권장하지 않습니다. 비지니스에 적용하시는 경우에는 보기를 별도로 만들어 적용하시길 권장합니다.</p>
+
+<h3 id="참고자료">참고자료</h3>
+
+<ul>
+  <li><a href="https://support.google.com/analytics/answer/1034832">구글 도움말 - 포함 및 제외 필터</a></li>
+  <li><a href="https://support.google.com/analytics/answer/1034836">구글 도움말 - 고급필터</a></li>
+  <li><a href="https://support.google.com/analytics/answer/1034840">구글 도움말 - 내부 트래픽 제외하기</a></li>
+</ul>
+
+<hr />
+
+<p>실무에서 GA와 페이스북, 인스타그램 광고 시스템을 다루며, 개인적으로 학습한 내용을 정리한 글입니다. 사실과 다른 내용이나, 문의사항이 있으시다면 댓글 또는 홈페이지 우측하단의 메신저를 보내주세요! CONTACT 페이지를 통해 메일을 보내실 수도 있습니다. 감사합니다.<br /></p>
+:ET
